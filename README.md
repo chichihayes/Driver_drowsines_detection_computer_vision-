@@ -1,29 +1,28 @@
-# Driver_drowsines_detection_computer_vision
-# 🚗 Driver Drowsiness Detection with AI Voice Alerts
+# Driver Drowsiness Detection with AI Voice Alerts
 
 A real-time driver drowsiness detection system using computer vision and AI-powered text-to-speech alerts. It monitors eye closure (EAR) and head drop via your webcam, escalates alerts through spoken warnings using OpenAI TTS, and logs every session with charts for post-drive analysis.
 
 ---
 
-## 📸 Demo
+## Demo
 
-> The system overlays a live HUD on your webcam feed showing EAR score, head pitch, current alert state, blink count, and session timer. Alerts are spoken aloud using a natural AI voice.
-
----
-
-## ✨ Features
-
-- 👁️ **Eye Aspect Ratio (EAR)** tracking to detect eye closure
-- 🙆 **Head pitch estimation** to detect nodding/head drop
-- 🔊 **AI voice alerts** via OpenAI TTS (voice: Nova), pre-generated at startup
-- 📊 **Post-session charts** — EAR and head pitch over time with state shading
-- 🗂️ **Session logging** — per-frame CSV, state transition events, and a JSON summary
-- 📸 **Auto screenshots** saved on every state change
-- 🎯 **4 alert levels**: Warning (Eye), Warning (Head), Warning (Combined), Critical
+The system overlays a live HUD on your webcam feed showing EAR score, head pitch, current alert state, blink count, and session timer. Alerts are spoken aloud using a natural AI voice.
 
 ---
 
-## 🛠️ Installation
+## Features
+
+- Eye Aspect Ratio (EAR) tracking to detect eye closure
+- Head pitch estimation to detect nodding/head drop
+- AI voice alerts via OpenAI TTS (voice: Nova), pre-generated at startup
+- Post-session charts — EAR and head pitch over time with state shading
+- Session logging — per-frame CSV, state transition events, and a JSON summary
+- Auto screenshots saved on every state change
+- 4 alert levels: Warning (Eye), Warning (Head), Warning (Combined), Critical
+
+---
+
+## Installation
 
 ### 1. Clone the repo
 
@@ -40,7 +39,7 @@ pip install -r requirements.txt
 
 ### 3. Set your OpenAI API key
 
-**Never hardcode your API key.** Set it as an environment variable:
+Never hardcode your API key. Set it as an environment variable:
 
 ```bash
 # macOS / Linux
@@ -65,7 +64,7 @@ Press **Q** to quit. A session summary will be printed and all data saved automa
 
 ---
 
-## 📦 Requirements / Packages
+## Requirements / Packages
 
 | Package | Purpose |
 |---|---|
@@ -97,7 +96,7 @@ matplotlib
 
 ---
 
-## 📁 Output Structure
+## Output Structure
 
 Each run creates a timestamped session folder:
 
@@ -114,12 +113,12 @@ session_YYYYMMDD_HHMMSS/
 
 ---
 
-## ⚙️ Detection Parameters
+## Detection Parameters
 
 | Parameter | Default | Description |
 |---|---|---|
 | `EAR_THRESHOLD` | `0.22` | EAR below this = eyes closing |
-| `HEAD_PITCH_THRESH` | `15.0°` | Pitch above this = head drop |
+| `HEAD_PITCH_THRESH` | `15.0 deg` | Pitch above this = head drop |
 | `WARNING_FRAMES` | `20` | Frames before a warning alert |
 | `CRITICAL_FRAMES` | `40` | Frames before a critical alert |
 | `EAR_HISTORY_LEN` | `10` | Smoothing window for EAR |
@@ -127,12 +126,12 @@ session_YYYYMMDD_HHMMSS/
 
 ---
 
-## 🔒 Security Note
+## Security Note
 
 Never commit your OpenAI API key to version control. Use environment variables or a `.env` file with `python-dotenv`. Add `.env` to your `.gitignore`.
 
 ---
 
-## 📄 License
+## License
 
 MIT License — feel free to use and adapt.
